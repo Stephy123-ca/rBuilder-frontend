@@ -1,4 +1,4 @@
-import { Button, Divider, Link, Stack, Typography } from '@mui/material'
+import { Button, Divider,Stack, Typography } from '@mui/material'
 import React from 'react'
 import { FaFileDownload } from "react-icons/fa";
 import Edit from './Edit';
@@ -9,6 +9,7 @@ import { addHistoryAPI, getResumeAPI } from '../services/allAddedAPIs';
 import html2canvas from 'html2canvas'
 import { jsPDF } from "jspdf";
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
  
 const suggestion = ['java', 'DotNet', 'React', 'Angular', 'Html', 'css']
 
@@ -54,7 +55,7 @@ const handleUpdate=(data)=>{
     
       <Button onClick={downloadPDF}><FaFileDownload className='fs-3' /></Button>
         <Edit resumeId={resumeId} formData={formData} setFormData={setFormData} setResumeId={setResumeId} onUpdate={handleUpdate} setUpdateId={setUpdateId}/>
-       <Link href={'/history'}><Button><MdHistory className='fs-2' /></Button></Link>
+       <Link to={'/history'}><Button><MdHistory className='fs-2' /></Button></Link>
     
       </Stack>
       <div>
