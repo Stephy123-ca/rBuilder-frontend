@@ -27,7 +27,7 @@ const Preview = ({formData,setFormData,resumeId,setResumeId}) => {
     pdf.addImage(imgData,"PNG",0,0,pdfWidth,pdfHeight)
     pdf.save("resume.pdf")
     try{
-     if(updateId==formData){ 
+     if(updateId){ 
       const result=await addHistoryAPI(updateId)
       console.log(result)
       }else{
